@@ -37,13 +37,17 @@ def starting(p1, p2):
 
 # Asks current player the next position
 
-def position(current_player):
+def position(p1, p2, current_player):
     valid_positions = list(range(1, 10))
     user_position = 'wrong'
     while user_position not in valid_positions:
         try:
-            user_position = int(
-                input(f"Player {current_player}, Choose your next position (1-9): "))
+            if p1 == current_player:
+                user_position = int(
+                    input(f"Player 1, Choose your next position (1-9): "))
+            elif p2 == current_player:
+                user_position = int(
+                    input(f"Player 2, Choose your next position (1-9): "))
         except:
             print("Not a valid position!")
     return user_position
@@ -73,6 +77,7 @@ def checkwin(board, current_player):
     (current_player in board[3] and current_player in board[5] and current_player in board[7])
 )
 
+
 # Ask to replay the game
 
 def replay():
@@ -98,12 +103,15 @@ def game():
     if game_on:
         display_game(board)
     while game_on:
-        marker_place = position(current_player)
+        marker_place = position(player1_marker, player2_marker, current_player)
         if board[marker_place] == ' ':
             updated_board = place_marker(board, current_player, marker_place)
             display_game(updated_board)
             if checkwin(board, current_player):
-                print(f"Player {current_player} wins!")
+                if player1_marker == 'X' and current_player == 'X' or player1_marker == 'O' and current_player == 'O':
+                    print("Player 1 wins!")
+                elif player2_marker == 'X' and current_player == 'X' or player2_marker == 'O' and current_player == 'O':
+                    print("Player 2 wins!")
                 game_on = False
                 break
             if ' ' not in board[1:]:
