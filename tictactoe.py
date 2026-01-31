@@ -62,24 +62,16 @@ def place_marker(board, marker, position):
 # Check for all possible game win matches
 
 def checkwin(board, current_player):
-    if current_player in board[1] and current_player in board[2] and current_player in board[3]:
-        return True
-    elif current_player in board[4] and current_player in board[5] and current_player in board[6]:
-        return True
-    elif current_player in board[7] and current_player in board[8] and current_player in board[9]:
-        return True
-    elif current_player in board[1] and current_player in board[4] and current_player in board[7]:
-        return True
-    elif current_player in board[2] and current_player in board[5] and current_player in board[8]:
-        return True
-    elif current_player in board[3] and current_player in board[6] and current_player in board[9]:
-        return True
-    elif current_player in board[1] and current_player in board[5] and current_player in board[9]:
-        return True
-    elif current_player in board[3] and current_player in board[5] and current_player in board[7]:
-        return True
-    else:
-        return False
+    return (
+    (current_player in board[1] and current_player in board[2] and current_player in board[3]) or
+    (current_player in board[4] and current_player in board[5] and current_player in board[6]) or
+    (current_player in board[7] and current_player in board[8] and current_player in board[9]) or
+    (current_player in board[1] and current_player in board[4] and current_player in board[7]) or
+    (current_player in board[2] and current_player in board[5] and current_player in board[8]) or
+    (current_player in board[3] and current_player in board[6] and current_player in board[9]) or
+    (current_player in board[1] and current_player in board[5] and current_player in board[9]) or
+    (current_player in board[3] and current_player in board[5] and current_player in board[7])
+)
 
 # Ask to replay the game
 
