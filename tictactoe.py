@@ -6,7 +6,7 @@ def player_input():
     valid_choices = ['X', 'O']
     player_1 = 'wrong'
     while player_1 not in valid_choices:
-        player_1 = input("Player 1, do you want to be X or O? ")
+        player_1 = input("Player 1, do you want to be X or O? ").upper()
 
         if player_1 not in valid_choices:
             print("Not a valid choice!")
@@ -29,7 +29,7 @@ def starting(p1, p2):
             print("Player 1 will go first")
         else:
             print("Player 2 will go first")
-        play = input("Are you ready to play? Answer 'yes' or 'no': ")
+        play = input("Are you ready to play? Answer 'yes' or 'no': ").lower()
 
         if play not in valid_choices:
             print("Not a valid choice!")
@@ -87,7 +87,7 @@ def replay():
     valid_answers = ['yes', 'no']
     answer = 'wrong'
     while answer not in valid_answers:
-        answer = input("Do you want to play again? Type 'yes' or 'no': ")
+        answer = input("Do you want to play again? Type 'yes' or 'no': ").lower()
 
         if answer not in valid_answers:
             print("Not a valid answer!")
