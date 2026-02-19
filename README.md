@@ -8,7 +8,8 @@
 - <code>blackjack.py</code> - A simplified version of the classic Blackjack card game, where the player competes against the dealer (computer) using a single deck of 52 cards.
 
 **`mini-projects`** folder:
-- Contains a few mini-projects that I've programmed in order to improve my skills in Python.
+- This folder contains a collection of small Python projects that I’ve built to practice and improve my programming skills.
+- There's a `README.md` inside the folder explaining each project and how to test it.
 
 **How to run**:
 - Once you clone the repo, run the project with: <code>python project_name.py</code>
