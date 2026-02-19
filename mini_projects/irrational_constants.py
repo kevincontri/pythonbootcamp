@@ -3,8 +3,8 @@ import mpmath
 from datetime import datetime
 
 """
-Enter an irrational constant number and a number of decimal places and
-the program will generate that constant's number up to the given number of decimal places.
+Enter an irrational constant number and a number of decimal places.
+The program will generate that constant's number up to the given number of decimal places.
 The built-in 'math' library allows precision up to a very limited number of decimal places,
 whereas mpmath allows an arbitrary number of decimal places, making the program more scalable.
 Programmed with mpmath library, setting a limit precision of 1000 to avoid performance issues.
